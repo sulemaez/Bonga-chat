@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Bonga Chat</title>
+  <link rel="shortcut icon" type="image/png" href="/images/msg.png" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- cdn css -->     
+    <link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+    <!--===============================================================================================-->  
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/hamburgers/1.1.3/hamburgers.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.5/css/select2.min.css">
+    
+    <!-- load css files -->  
+    <link rel="stylesheet" type="text/css" href="css/chat.css">
+    <link rel="stylesheet" type="text/css" href="css/util.css">
+    <link rel="stylesheet" type="text/css" href="css/modal.css">
+</head>
+<body>
+
+<div id="frame">
+  <div id="sidepanel">
+    <div id="profile">
+      <div class="wrap">
+        <img id="profile-img" src="/images/man.png" class="online" alt="" />
+        <p id="usernameplace" style="margin-top: 10px"></p>
+      </div>
+    </div>
+
+    <div id="search">
+      <label for=""><i class="fa fa-search" aria-hidden="true"></i></label>
+      <input type="text" id="usersearch" placeholder="Search contacts..." />
+    </div>
+
+    <div id="contacts">
+      <ul id="contacts-list">
+          
+      </ul>
+    </div>
+    
+  </div>
+  
+  <div class="content">
+    <div class="contact-profile">
+      <img src="/images/man.png"alt="" />
+      <p id="selecteduser" style="margin-top: 20px;">No Ninja</p>
+      <div class="social-media"> 
+        <button class="btn btn-primary btn-sm" id="clearchats" style="margin-left: 30px;">clear chats</button> 
+         <button class="btn btn-primary btn-sm" id="logout" style="margin-left: 30px;">logout</button> 
+        <a href="https://github.com/sulemaez"><i class="fa fa-github" aria-hidden="true"></i></a>
+        <a href="https://twitter.com/sulemaez"><i class="fa fa-twitter" aria-hidden="true"></i></a>    
+      </div>
+    </div>
+    <div class="messages">
+      <ul>
+        
+      </ul>
+    </div>
+    <div class="message-input">
+      <div class="wrap">
+      <input type="text" class="message-area" placeholder="Write your message..." />
+      <i class="fa fa-paperclip attachment" aria-hidden="true"></i>
+      <button class="submit" id="sendBtn"><i class="fa fa-paper-plane" aria-hidden="true"></i></button>
+      </div>
+    </div>
+  </div>
+</div>
+
+      
+      <!-- Modal -->
+    <div class="modal text-center" id="modal" tabindex="-1" role="dialog" style="width:100% !important;margin:0 !important;">
+    <div class="limiter">
+    <div class="container-login100 text-center" style="background-image: url('images/city/1.jpg');">
+    
+            <div class="login100-form-avatar">
+              <img src="images/logo.png">
+            </div>
+            <h4 style="margin-bottom: 5px;color: lightgreen;font-weight: bold;">Pick an avatar</h4>
+           <!-- Wrapper of the avatar na -->
+<div class="nav_Wrapper">
+  <!-- The avatar nav -->
+
+      <nav id="pnProductNav" class="pn-ProductNav dragscroll">
+        <!-- container for the avatars -->
+         <div id="pnProductNavContents" class="pn-ProductNav_Contents">
+             
+         </div>
+       </nav>
+       <!-- The navigation Buttons -->
+      <button id="pnAdvancerLeft" class="pn-Advancer pn-Advancer_Left" type="button">
+         <svg class="pn-Advancer_Icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 551 1024"><path d="M445.44 38.183L-2.53 512l447.97 473.817 85.857-81.173-409.6-433.23v81.172l409.6-433.23L445.44 38.18z" /></svg>
+     </button>
+     <button id="pnAdvancerRight" class="pn-Advancer pn-Advancer_Right" type="button">
+        <svg class="pn-Advancer_Icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 551 1024"><path d="M105.56 985.817L553.53 512 105.56 38.183l-85.857 81.173 409.6 433.23v-81.172l-409.6 433.23 85.856 81.174z" /></svg>
+    </button>
+</div> 
+            <div class="wrap-login100  p-b-30">
+              <form class="login100-form validate-form">        
+                <div class="wrap-input100 validate-input m-b-10" data-validate = "Username is required">
+                  <input class="input100" type="text" id="username" name="username" placeholder="Username">
+                  <span class="focus-input100"></span>
+                  <span class="symbol-input100">
+                    <i class="fa fa-user"></i>
+                  </span>
+                </div>
+                <div class="container-login100-form-btn p-t-10">
+                  <button class="ch-btn login100-form-btn">
+                    Choose
+                  </button>
+                </div>      
+              </form>
+            </div>
+       </div>
+      </div>
+      </div>            
+             
+</body>
+<!-- boostrap and jquery CDN --> 
+ 
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      crossorigin="anonymous"></script>
+     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.1/socket.io.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.5/js/select2.min.js"></script> 
+     <script src="js/notify.min.js"></script>
+     <script src="js/sweetalert.min.js"></script>
+     <script src="js/scroll.js"></script>
+     <script src="js/lockablestorage.js"></script>
+     <script src="js/chat.js"></script>
+</html>

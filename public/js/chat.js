@@ -350,8 +350,14 @@ $(document).ready(function(){
               element.setAttribute("id",elid)
               element.innerHTML = `
                     <div class="wrap">
-                      <span class="${classes}"></span>
-                      <img  src="${avatar}" alt="" />
+
+                      <span class="${classes}"></span>    
+                      <img class="contact-img" src="${avatar}" alt="" />
+                       
+                       <ul id="drop-${id}" class="contact-drop">
+                            <li>${name}</li>
+                            <li>${getPreview(text)}</li>
+                      </ul>
                       <div class="meta">
                         <p class="name">${name}</p>
                         <p class="preview">${getPreview(text)}</p>

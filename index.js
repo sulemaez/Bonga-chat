@@ -4,11 +4,12 @@ const path = require('path')
 const PORT = process.env.PORT || 5000
 const socketIO = require('socket.io')
 const avatars =require('./store/avatar.js')
+const cors = require('cors')
 
 //set up app engine and paths
 var server = app.set('views', path.join(__dirname, 'views'))
   .get('/', (req, res) => res.render('index'))
-  .get('/avatars',(req,res) => {
+  .get('/avatars',cors(),(req,res) => {
      if(req.query.pos > avatars.size){
        res.send("end")
      }else{

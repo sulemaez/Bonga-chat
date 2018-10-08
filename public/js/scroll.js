@@ -14,7 +14,7 @@
 
        //request server for image 
        $.ajax({
-            url: 'http://localhost:5000/avatars?pos='+count,
+            url: 'avatars?pos='+count,
             type: 'GET'
         })
         .done(function(data) {
